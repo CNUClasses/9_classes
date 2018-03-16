@@ -40,6 +40,7 @@ RAII::RAII(const char *ps) {
 }
 
 RAII::~RAII() {
+	if (pmyString)
 		delete[] pmyString;
 }
 

@@ -9,7 +9,7 @@
 #define DEFAULTCLASS_H_
 class defaultClass {
 private:
-	int i;
+	int* i;
 public:
 	defaultClass(int i);
 	virtual ~defaultClass();

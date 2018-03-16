@@ -6,9 +6,12 @@
  */
 
 #include "defaultClass.h"
-defaultClass::defaultClass(int i) {
-	this->i=i;
+defaultClass::defaultClass(int i){
+	this->i= new int;
+	*(this->i)=i;
 }
 
 defaultClass::~defaultClass() {
+	if (i)
+		delete i;
 }

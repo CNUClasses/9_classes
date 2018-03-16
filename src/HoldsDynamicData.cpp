@@ -40,7 +40,7 @@ HoldsDynamicData::~HoldsDynamicData() {
 ////goes out of scope? what about when the last 1 goes out of scope?
 //HoldsDynamicData::HoldsDynamicData(const HoldsDynamicData& other){
 //	ps = other.ps;
-//	FTRACE2("Copy constructor, pointer address=",IntToString ((int)ps));
+////	FTRACE2("Copy constructor, pointer address=",IntToString ((int)ps));
 //}
 
 //copy constructor the right way
