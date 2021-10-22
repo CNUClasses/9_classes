@@ -9,8 +9,7 @@
 #include "CopyConstructor.h"
 
 CopyConstructor::CopyConstructor() {
-//	FTRACE1("in Default Constructor");
-
+	FTRACE1("in Default Constructor");
 }
 
 CopyConstructor::~CopyConstructor() {
@@ -18,7 +17,7 @@ CopyConstructor::~CopyConstructor() {
 }
 
 CopyConstructor::CopyConstructor(const CopyConstructor& other) {
-//	FTRACE1("in Copy Constructor");
+	FTRACE1("in Copy Constructor");
 	//this is a convenient reference to the current object
 	this->i = other.i;
 	j=other.j;

@@ -21,18 +21,19 @@
 
 using namespace std;
 
-void forgotToPassByRef(CopyConstructor& myC){
+void forgotToPassByRef(CopyConstructor myC){
 	int i=1;
 	//can be a big deal if have pointer data in myC
-
 }
 
 int main() {
 	//why does this work?
-//	defaultClass d11(1);	//1 arg constructor
-//	defaultClass d22(d11);	//copy constructor
-//	defaultClass d33(2);
-//	d33 = d11; 			//assignment operator
+	defaultClass d11(1);	//1 arg constructor
+	defaultClass d22(d11);	//copy constructor (compiler provided, makes shallow copy of dynamic data, VERY BAD)
+							//when d11 and d22 destructor called we free same memory twice and crash
+	defaultClass d33(2);
+	d33 = d11; 				//assignment operator (compiler provided,makes shallow copy of dynamic data, VERY BAD )
+							//when d11 and d33 destructor called we free same memory twice and crash
 //
 //
 //	HoldsDynamicData my111("my111");
@@ -41,12 +42,12 @@ int main() {
 //
 //	my222 = my111;						//assignment operator
 	//copy constructor
-	CopyConstructor myC;
-	myC.setValues(3, 4);
+//	CopyConstructor myC;
+//	myC.setValues(3, 4);
 
 	//call the copyconstructor 2 ways
-	CopyConstructor myNewC(myC);	//like initilizer lists
-	forgotToPassByRef(myC);			//function pass by value calls copy constructor
+//	CopyConstructor myNewC(myC);	//like initilizer lists
+//	forgotToPassByRef(myC);			//function pass by value calls copy constructor
 
 //	{						//usage
 //		AClass ac1;			//default constructor

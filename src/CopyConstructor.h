@@ -24,8 +24,6 @@ public:
 	virtual ~CopyConstructor();
 
 	void setValues(int i, int j);
-
-
 };
 
 #endif /* COPYCONSTRUCTOR_H_ */
