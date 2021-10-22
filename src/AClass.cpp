@@ -4,7 +4,11 @@
 //it for you if your class has no other constructors
 AClass::AClass():i(0)
 {
-	//whats i = to? use initializer list
+	//           ^
+	//           | this is an initializer list
+	//           faster and better than 
+	//           this->i=0; 
+	//           initialize in the order declared in the header file
 }
 
 AClass::AClass(int val):i(i)

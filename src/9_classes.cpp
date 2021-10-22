@@ -27,12 +27,17 @@ void forgotToPassByRef(CopyConstructor myC){
 }
 
 int main() {
-	//why does this work?
-	defaultClass d11(1);	//1 arg constructor
-	defaultClass d22(d11);	//copy constructor (compiler provided, makes shallow copy of dynamic data, VERY BAD)
-							//when d11 and d22 destructor called we free same memory twice and crash
-	defaultClass d33(2);
-	d33 = d11; 				//assignment operator (compiler provided,makes shallow copy of dynamic data, VERY BAD )
+	{						//usage
+		AClass ac1;			//default constructor
+		AClass ac2(ac1);	//copy constructor
+	}						//ac1 and ac2 destructors called because they go out of scope
+
+//	//why does this work?
+//	defaultClass d11(1);	//1 arg constructor
+//	defaultClass d22(d11);	//copy constructor (compiler provided, makes shallow copy of dynamic data, VERY BAD)
+//							//when d11 and d22 destructor called we free same memory twice and crash
+//	defaultClass d33(2);
+//	d33 = d11; 				//assignment operator (compiler provided,makes shallow copy of dynamic data, VERY BAD )
 							//when d11 and d33 destructor called we free same memory twice and crash
 //
 //
@@ -49,10 +54,6 @@ int main() {
 //	CopyConstructor myNewC(myC);	//like initilizer lists
 //	forgotToPassByRef(myC);			//function pass by value calls copy constructor
 
-//	{						//usage
-//		AClass ac1;			//default constructor
-//		AClass ac2(ac1);	//copy constructor
-//	}						//ac1 and ac2 destructors called
 
 	//
 	//
